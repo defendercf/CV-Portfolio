@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <title>CV Anas</title>
+    <style>
+      /* handle the contents that overflows */
+      html {
+        overflow: hidden;
+      }
+      /* styling the html and body in general */
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        outline: 0;
+        font-size: 24px;
+        height: 100%;
+        width: 100%;
+      }
+      /* create a snap scroll and disable horizontal scrolling */
+      body {
+        font-family: "opensans", sans-serif;
+        scroll-behavior: smooth;
+        scroll-snap-type: y mandatory;
+        overflow-y: auto;
+        overflow-x: hidden;
+      }
+      /* styling section */
+      section {
+        height: 100vh;
+        width: 100%;
+        min-height: 100%;
+        scroll-snap-align: start;
+      }
+      .row {
+        width: 100%;
+        max-width: 100%;
+      }
+      /* styling the background and page */
+      .home {
+        background: url(img/R0001268.JPG), center center no-repeat;
+        background-attachment: fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      /* Styling the id name in general */
+      #name {
+        text-align: center;
+        margin: 0 auto;
+        margin-top: 15%;
+        margin-bottom: 15%;
+      }
+      /* styling the name */
+      #name h1 {
+        font-family: "opensans-bold", sans-serif;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 1.8rem;
+        line-height: 60px;
+        letter-spacing: 0.025em;
+        text-transform: capitalize;
+        color: #f5a158;
+        margin: -7px auto;
+
+        text-shadow: 0 0 15px rgba(#16a085, 0.5);
+        filter: 0;
+        -webkit-filter: 0;
+      }
+      /* styling the span part of the id name */
+      #name span {
+        font-size: 0.7rem;
+        margin: -7px auto;
+        text-transform: uppercase;
+        font-weight: lighter;
+        color: white;
+      }
+      /* create a solid line */
+      #name hr {
+        width: 65%;
+        border: 1px solid #ececec;
+        border-style: inset;
+        margin: 12px auto;
+      }
+      /* Styling the navigation button */
+      #navigation {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      /* Styling about section */
+      .about {
+        margin: 0 auto;
+        padding: 100px;
+        background-color: #ececec;
+        align-items: center;
+        display: flex;
+      }
+
+      .about h2 {
+        text-transform: uppercase;
+        font-family: "opensans-bold";
+        font-weight: 700;
+        font-size: 1.2rem;
+        line-height: 33px;
+        letter-spacing: 0.15em;
+        color: #f9b42d;
+      }
+
+      .about h3 {
+        color: #79a29a;
+        font-family: "opensans-semibold";
+        font-weight: bold;
+        font-size: 1.35rem;
+        line-height: 44px;
+      }
+
+      .about h4 {
+        font-size: 1rem;
+        line-height: 33px;
+        font-weight: lighter;
+        color: #79a19a;
+        text-transform: uppercase;
+      }
+
+      .about p {
+        color: #000000;
+        font-family: "opensans-light";
+        font-weight: lighter;
+        font-size: 1rem;
+        line-height: 33px;
+        margin-top: -1vh;
+      }
+      /* Styling Image of Myself */
+      .myself {
+        margin-left: 110px;
+        margin-right: 10px;
+        -webkit-order: 2;
+        -ms-order: 2;
+      }
+      .myself img {
+        width: 250px;
+        height: 250px;
+        object-fit: cover;
+        border: 5px solid rgba(189, 213, 252);
+        border-radius: 50%;
+        margin-right: 120px;
+      }
+      /* Styling the SkillsEducation Section in General */
+      .skilleducation {
+        margin: 0 auto;
+        background-color: #509db5;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 20px;
+      }
+      /* Styling the first part which is the left side */
+      .bagian1 {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+      }
+      .bagian1 h2 {
+        color: #fafcfc;
+        font-family: "opensans-semibold";
+        font-weight: bold;
+        font-size: 1.35rem;
+        line-height: 44px;
+        text-align: left;
+      }
+
+      .bagian1 p {
+        color: #000000;
+        font-family: "opensans-light";
+        font-weight: lighter;
+        font-size: 1rem;
+        line-height: 33px;
+        margin-top: -1vh;
+        text-align: left;
+      }
+
+      /* Styling the second part which is the right side */
+      .bagian2 {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        text-align:right;
+      }
+      .bagian2 h3 {
+        color: #fafcfc;
+        font-family: "opensans-semibold";
+        font-weight: bold;
+        font-size: 1.35rem;
+        line-height: 44px;
+        text-align: right;
+      }
+      .bagian2 h4 {
+        font-size: 1rem;
+        line-height: 33px;
+        font-weight: lighter;
+        color: #dcdfe0;
+        text-transform: uppercase;
+        text-align: right;
+      }
+
+      .bagian2 p {
+        color: #000000;
+        font-family: "opensans-light";
+        font-weight: lighter;
+        font-size: 1rem;
+        line-height: 33px;
+        margin-top: -1vh;
+        text-align: right;
+      }
+      .portfolio {
+        background-color: #ececec;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items:center;
+      }
+      #portbutton {
+        background-color: #ececec;
+      }
+      #portbutton:hover {
+        background-image: linear-gradient(rgb(0 0 0/30%) 0 0);
+      }
+      /* Styling Social Media Section and Buttons */
+      .socialmedia {
+        background: url(img/R0000947.JPG), center center no-repeat;
+        background-attachment: fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      #socmedbutton {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 10px;
+        margin-top: 0%;
+      }
+      #socmedbutton img {
+        width: 80px;
+        height: 80px;
+        margin: 10px;
+      }
+      .github:hover {
+        background-image: linear-gradient(rgb(0 0 0/20%) 0 0);
+        border-radius:25%
+      }
+      .instagram:hover {
+        background-image: linear-gradient(rgb(0 0 0/20%) 0 0);
+        border-radius:25%
+      }
+      .linkedin:hover {
+        background-image: linear-gradient(rgb(0 0 0/20%) 0 0);
+        border-radius:25%
+      }
+    </style>
+  </head>
+  <body>
+    <section id="home" class="home container-fluid">
+      <div class="row" id="name">
+        <div class="col-md">
+          <h1>Anas Syauqirahman Nugroho</h1>
+          <span>Programmer</span>
+          <span>Photographer</span>
+          <hr />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md" id="navigation">
+          <a href="#about" class="d-flex flex-column align-items-center"
+            ><img src="img/Arrow.png"
+          /></a>
+        </div>
+      </div>
+    </section>
+    <section id="about" class="about container-fluid flex-column flex-lg-row">
+      <div class="myself col col-xl-2">
+        <img src="img/IMG_4559.png" alt="myself" />
+      </div>
+
+      <div class="col col-xl-5">
+        <h3>
+          Hello, I'm
+          <span style="color: #5084d9">Anas</span>
+        </h3>
+        <p class="mb-4">
+          An Information System Student in Telkom University, eager to learn
+          things surrounding Data Science.
+        </p>
+
+        <h4>FULLNAME</h4>
+        <p>Anas Syauqirahman Nugroho</p>
+
+        <h4>BIRTH DATE</h4>
+        <p>May 7th, 2004 <span style="color: #5084d9">or</span> 16 Heisei</p>
+        <h4>CONTACT</h4>
+        <p><span style="color: #5084d9">+62</span> 813-8541-8451</p>
+        <p><span style="color: #5084d9">+81</span> 90-6300-8073</p>
+        <p>defendercf@gmail.com</p>
+      </div>
+    </section>
+    <section
+      id="skilleducation"
+      class="skilleducation container-fluid d-flex flex-row"
+    >
+      <div class="bagian1 col col-xl-5">
+        <h2>Skills</h2>
+        <p>- Java</p>
+        <p>- Python</p>
+        <p>- HTML</p>
+        <p>- CSS</p>
+
+        <h2>Language</h2>
+        <p>
+          <span style="color: #f5a158">Proficient</span> Level in Indonesian
+        </p>
+        <p><span style="color: #f5a158">Proficient</span> Level in English</p>
+        <p>
+          <span style="color: #f5a158">Conversational</span> Level in Japanese
+        </p>
+      </div>
+      <div class="bagian2 col col-xl-5 d-flex flex-column flex-row">
+        <h3>Education</h3>
+
+        <h4>Junior High School</h4>
+        <p>SMPN 3 Depok</p>
+        <p>2016 - 2019</p>
+        <h4>Senior High School</h4>
+        <p>SMA International Budi Mulia Dua</p>
+        <p>2019 - 2022</p>
+        <h4>University</h4>
+        <p>Telkom University</p>
+        <p>2022 - Now</p>
+      </div>
+    </section>
+    <section id="portfolio"
+      class="portfolio container-fluid d-flex flex-row"
+    >
+        <a href="portfolio.html" class="portbutton btn-primary btn-sm mx-1">Check out my Portfolio</a>
+    </section>
+    <section
+      id="socialmedia"
+      class="socialmedia container-fluid d-flex flex-row"
+    >
+    <div class="row">
+        <div class="col-md" id="socmedbutton">
+          <a href="https://github.com/defendercf" class="github"
+            ><img src="img/github.png">
+          <a href="https://www.instagram.com/anasssn_/" class="instagram"
+            ><img src="img/instagram.png">
+          <a href="https://www.linkedin.com/in/anas-sn-87347525a/" class="linkedin"
+            ><img src="img/linkedin.png">
+    </section>
+  </body>
+</html>
